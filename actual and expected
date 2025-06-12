@@ -1,0 +1,53 @@
+# Demonstration 3:--
+
+def square(x):
+    return x * x
+
+test_cases = [
+    {"input": 2, "expected": 4},
+    {"input": -3, "expected": 9},
+    {"input": 6, "expected": 0},
+    {"input": 7, "expected": 25},
+    {"input": 10, "expected": 100},
+    {"input": -1, "expected": 1}
+]
+
+def run_tests():
+    print("Running Automated Tests...\n")
+    passed = 0  
+
+    for index, test in enumerate(test_cases):
+        input_value = test["input"]
+        expected_output = test["expected"]
+        actual_output = square(input_value)
+
+        
+        if actual_output == expected_output:
+            result = "PASS"
+            passed += 1
+        else:
+            result = "FAIL"
+
+
+        print(f"Test Case {index + 1}: Input={input_value} | Expected={expected_output} | Actual={actual_output} --> {result}")
+
+    total = len(test_cases)
+    print(f"\nTesting Completed: {passed}/{total} Tests Passed.")
+
+
+if __name__ == "__main__":
+    run_tests()
+
+
+## output
+      Running Automated Tests...
+
+Test Case 1: Input=2 | Expected=4 | Actual=4 --> PASS
+Test Case 2: Input=-3 | Expected=9 | Actual=9 --> PASS
+Test Case 3: Input=6 | Expected=0 | Actual=36 --> FAIL
+Test Case 4: Input=7 | Expected=25 | Actual=49 --> FAIL
+Test Case 5: Input=10 | Expected=100 | Actual=100 --> PASS
+Test Case 6: Input=-1 | Expected=1 | Actual=1 --> PASS
+
+Testing Completed: 4/6 Tests Passed.
+  
